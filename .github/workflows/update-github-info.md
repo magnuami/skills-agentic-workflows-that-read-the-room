@@ -6,6 +6,10 @@ strict: true
 on:
   schedule: daily
   workflow_dispatch:
+safe-outputs:
+  create-pull-request:
+    title-prefix: "[mona] "
+    draft: true  
 permissions:
   contents: read
   pull-requests: read
@@ -23,11 +27,7 @@ network:
 engine:
   id: copilot
   copilot-sdk: true
-safe-outputs:
-  create-pull-request:
-    title-prefix: "[mona] "
-    draft: true
-    fallback-as-issue: false
+
 ---
 
 # Update GitHub Info
