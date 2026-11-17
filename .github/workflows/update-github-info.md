@@ -28,7 +28,7 @@ safe-outputs:
     title-prefix: "[Mona] "
     allowed-files:
       - site/content/github-info.md
-    draft: false
+    draft: true
 ---
 
 # Update GitHub Info
