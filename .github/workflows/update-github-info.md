@@ -25,10 +25,9 @@ engine:
   copilot-sdk: true
 safe-outputs:
   create-pull-request:
-    title-prefix: "[Mona] "
-    allowed-files:
-      - site/content/github-info.md
+    title-prefix: "[mona] "
     draft: true
+    fallback-as-issue: false
 ---
 
 # Update GitHub Info
