@@ -1,51 +1,41 @@
 ---
 name: update-github-info
-description: Propose practical, sourced updates to the GitHub Info website for Mona to review.
-intent: Keep Mona's GitHub Info website current with concise, useful updates backed by official GitHub sources.
-strict: true
+description: Draft website updates for Mona's GitHub Info site from official GitHub sources.
 on:
-  schedule: daily
   workflow_dispatch:
+  schedule:
+    - cron: '17 9 * * *'
 safe-outputs:
   create-pull-request:
     title-prefix: "[mona] "
-    draft: true  
-permissions:
-  contents: read
-  pull-requests: read
-  copilot-requests: write
+    draft: true
+    fallback-as-issue: false
 tools:
-  edit: true
+  edit:
   web-fetch:
-  github:
-    mode: gh-proxy
-    toolsets: default
 network:
   allowed:
-    - github.blog
     - github.com
-    - awesome-copilot.github.com
+    - github.blog
 engine:
-  id: copilot
-  copilot-sdk: true
-
+   id: copilot
+   copilot-sdk: true
 ---
 
-# Update GitHub Info
+# Update Mona's GitHub Info website
 
-Read `notes/mona-notes.md` and `site/content/github-info.md`. Fetch
-https://github.blog/latest/ and https://github.blog/changelog/ with the web-fetch
-tool. Also fetch https://awesome-copilot.github.com/workflows/ with the
-web-fetch tool. Use these sources to identify practical, developer-relevant
-updates that fit the site's current themes. Keep summaries short, include a
-source link for every update, preserve existing useful content, and do not add
-details that the sources do not support.
+Read `notes/mona-notes.md` before making changes.
 
+Use these sources:
+- `notes/mona-notes.md`
+- GitHub Blog: https://github.blog/latest/
+- GitHub Changelog: https://github.blog/changelog/
+
+Update `site/content/github-info.md` with concise,
+practical updates for readers and include source context when content comes
+from the GitHub Blog or GitHub Changelog.
+
+Open a pull request for Mona to review. 
 Use a pull request title that mentions Mona or GitHub Info. 
-Check open pull requests for an existing proposal covering the same updates.
-Edit only `site/content/github-info.md`, and only when there is a useful,
-well-supported update not already proposed. Then open one focused pull request
-for Mona to review; make no direct GitHub writes or changes to `main`. Use the
-configured `create-pull-request` safe output. If evidence is insufficient, the
-updates are already represented, or no material edit is warranted, call `noop`
-with a brief reason.
+Do not write directly to `main`;
+rely on `safe-outputs` with `create-pull-request`.
