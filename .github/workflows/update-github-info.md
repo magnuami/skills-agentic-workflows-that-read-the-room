@@ -24,6 +24,7 @@ network:
   allowed:
     - github.blog
     - github.com
+    - awesome-copilot.github.com
 engine:
   id: copilot
   copilot-sdk: true
@@ -34,10 +35,11 @@ engine:
 
 Read `notes/mona-notes.md` and `site/content/github-info.md`. Fetch
 https://github.blog/latest/ and https://github.blog/changelog/ with the web-fetch
-tool. Use official source material to identify practical, developer-relevant
+tool. Also fetch https://awesome-copilot.github.com/workflows/ with the
+web-fetch tool. Use these sources to identify practical, developer-relevant
 updates that fit the site's current themes. Keep summaries short, include a
-source link for every blog or changelog update, preserve existing useful content,
-and do not add details that the sources do not support.
+source link for every update, preserve existing useful content, and do not add
+details that the sources do not support.
 
 Use a pull request title that mentions Mona or GitHub Info. 
 Check open pull requests for an existing proposal covering the same updates.
