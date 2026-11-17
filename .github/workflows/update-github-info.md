@@ -39,6 +39,7 @@ updates that fit the site's current themes. Keep summaries short, include a
 source link for every blog or changelog update, preserve existing useful content,
 and do not add details that the sources do not support.
 
+Use a pull request title that mentions Mona or GitHub Info. 
 Check open pull requests for an existing proposal covering the same updates.
 Edit only `site/content/github-info.md`, and only when there is a useful,
 well-supported update not already proposed. Then open one focused pull request
