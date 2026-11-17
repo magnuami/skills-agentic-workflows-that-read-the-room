@@ -25,6 +25,7 @@ engine:
   copilot-sdk: true
 safe-outputs:
   create-pull-request:
+    title-prefix: "[For Mona to review] "
     allowed-files:
       - site/content/github-info.md
     draft: false
